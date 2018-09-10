@@ -24,12 +24,12 @@
 #include <curl/curl.h>
 #include <assert.h>
 
-bool http_test(const char *url, const char **headers, unsigned int num_headers, unsigned int iterations, struct http_test_result *out)
+bool http_test(const char *url, const char **headers, unsigned long num_headers, unsigned long iterations, struct http_test_result *out)
 {
     bool retval = false;
     CURL *curl;
     struct curl_slist *list = NULL;
-    unsigned int i;
+    unsigned long i;
  
     if(iterations > 0U){
      
@@ -85,7 +85,7 @@ bool http_test(const char *url, const char **headers, unsigned int num_headers, 
                                 out->start_transfer_time += start_transfer_time;
                                 out->total_time += total_time;
                                 
-#if 0                                
+#if 0                               
                                 printf("%f %f %f %f\n", lookup_time, connect_time, start_transfer_time, total_time);
 #endif                                
                             }

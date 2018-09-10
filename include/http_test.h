@@ -50,6 +50,6 @@ struct http_test_result {
  * @return true if test completes
  * 
  * */
-bool http_test(const char *url, const char **headers, unsigned int num_headers, unsigned int iterations, struct http_test_result *out);
+bool http_test(const char *url, const char **headers, unsigned long num_headers, unsigned long iterations, struct http_test_result *out);
 
 #endif
