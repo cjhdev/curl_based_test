@@ -63,7 +63,7 @@ sqeaky_clean: clean
 
 $(DIR_BIN)/tc_http_test: $(addprefix $(DIR_BUILD)/, tc_http_test.o mock_curl.o $(OBJ_CMOCKA) $(OBJ))
 	@ echo linking $@
-	$(CC) $(LDFLAGS) $^ -o $@
+	$(CC) $^ -o $@  $(LDFLAGS)
 
 
 
