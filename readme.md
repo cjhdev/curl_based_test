@@ -9,6 +9,8 @@ I've made the following assumptions in addition to the published requirements:
 - Library component shall return IP address and return code for the 
   final GET in a sequence of one or more iterations
 
+[![Build Status](https://travis-ci.org/cjhdev/curl_based_test.svg?branch=master)](https://travis-ci.org/cjhdev/curl_based_test)
+
 ## Building and Running the Application
 
 You will need the following:
