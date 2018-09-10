@@ -73,7 +73,7 @@ static bool check_header(const char *arg)
 int main(int argc, char **argv)
 {
     int c;
-    unsigned long iterations = 1;
+    long iterations = 1;
     unsigned long num_headers = 0U;
     const char *headers[100U];
     const char *opts = "H:n:hV";
@@ -100,14 +100,14 @@ int main(int argc, char **argv)
             }
             else{
                 
-                fprintf(stderr, "too many headers\n");
+                fprintf(stderr, "too many headers (limited to %lu)\n", sizeof(headers)/sizeof(*headers));
                 exit(EXIT_FAILURE);                
             }            
             break;
             
         /* iterations */
         case 'n':
-            if((sscanf(optarg, "%lu", &iterations) != 1U) || (iterations == 0U)){
+            if((sscanf(optarg, "%ld", &iterations) != 1U) || (iterations < 1)){
                 
                 fprintf(stderr, "-n argument must be an unsigned integer greater than zero\n");
                 exit(EXIT_FAILURE);                
@@ -135,7 +135,7 @@ int main(int argc, char **argv)
         }        
     };
     
-    if(!http_test("http://www.google.com/", headers, num_headers, iterations, &result)){
+    if(!http_test("http://www.google.com/", headers, num_headers, (unsigned long)iterations, &result)){
         
         fprintf(stderr, "http_test() failed\n");
         exit(EXIT_FAILURE);
