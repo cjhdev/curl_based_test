@@ -1,15 +1,16 @@
 curl_based_test
 ===============
 
+[![Build Status](https://travis-ci.org/cjhdev/curl_based_test.svg?branch=master)](https://travis-ci.org/cjhdev/curl_based_test)
+
 This repository contains a library and application implemented 
 according to the test-and-metrics-test requirements.
 
-I've made the following assumptions in addition to the published requirements:
+I've made the following assumptions:
 
 - Library component shall return IP address and return code for the 
   final GET in a sequence of one or more iterations
-
-[![Build Status](https://travis-ci.org/cjhdev/curl_based_test.svg?branch=master)](https://travis-ci.org/cjhdev/curl_based_test)
+- Application will accept no more than 100 headers
 
 ## Building and Running the Application
 
@@ -45,7 +46,7 @@ Print usage to stdout.
 cd test && make build_and_run
 ~~~
 
-Or just look at the most recent TravisCI run.
+Or just look at the most recent [TravisCI](https://travis-ci.org/cjhdev/curl_based_test) run.
 
 ## Layout
 
